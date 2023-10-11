@@ -1,8 +1,8 @@
-## Fall2023_IDS706 Mini Project 6: Complex SQL Query for a MySQL Database
-### by Jiayi Zhou [![CI](https://github.com/nogibjj/Fall2023_IDS706_MiniProject6_JiayiZhou/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Fall2023_IDS706_MiniProject6_JiayiZhou/actions/workflows/cicd.yml)
+## Fall2023_IDS706 Mini Project 7: Package a Python Script into a Command-Line Tool
+### by Jiayi Zhou
 
 ### Purpose
-This is for class data engineering mini project 6. It uses Python Script interacting with SQL Database on Azure Databricks. It utilizes continuous integration using GitHub Actions to automatically set up environment, test, format and lint code.
+This is for class data engineering mini project 7. It packages a Python Script into a Command-Line Tool. It uses Python Script interacting with SQL Database on Azure Databricks. It utilizes continuous integration using GitHub Actions to automatically set up environment, test, format and lint code.
 
 ### Functionality
 The project does: ETL-Query: [E] Extract a dataset from URL, [T] Transform, [L] Load into SQLite Database and [Q] Query For the ETL-Query lab:
@@ -12,12 +12,7 @@ The project does: ETL-Query: [E] Extract a dataset from URL, [T] Transform, [L] 
   * [Q] Write and execute a complex SQL query involving joins, aggregation, and sorting on Azure Databricks to analyze and retrieve insights from the data.
 
 ### Steps
-I created the template based on mini project 5 and modified the template. Based on the template, I made the following changes:
-1. Change the dataset from goose to women world cup. Women world cup is from FiveThirtyEight's public dataset. It is extracted into a local csv file, tranfromed the csv file with cleaning, and loaded into a .db file, and queryed with Azure Databricks.
-2. Convert the main.py into a command-line tool
-3. Update funcitonalities to extract, transform(add dataset), load, and query the data
-4. Create a sql log to record all the actions performed in the query
-5. Create an architectural diagram showing how the project works
+I created the template based on mini project 6 and modified the template. Based on the template, I made the following changes:
 
 ### Query
 This query accomplishes the following using a combination of subqueries, unions, aggregation, and sorting:
