@@ -86,3 +86,47 @@ SELECT team AS Team, COUNT(*) AS TotalMatchesPlayed
 [Row(Team='Switzerland', TotalMatchesPlayed=21), Row(Team='Ivory Coast', TotalMatchesPlayed=21), Row(Team='New Zealand', TotalMatchesPlayed=21), Row(Team='Germany', TotalMatchesPlayed=21), Row(Team='South Korea', TotalMatchesPlayed=21), Row(Team='Netherlands', TotalMatchesPlayed=21), Row(Team='Brazil', TotalMatchesPlayed=21), Row(Team='Australia', TotalMatchesPlayed=21), Row(Team='Japan', TotalMatchesPlayed=21), Row(Team='Thailand', TotalMatchesPlayed=21), Row(Team='Costa Rica', TotalMatchesPlayed=21), Row(Team='Spain', TotalMatchesPlayed=21), Row(Team='Cameroon', TotalMatchesPlayed=21), Row(Team='England', TotalMatchesPlayed=21), Row(Team='France', TotalMatchesPlayed=21), Row(Team='Colombia', TotalMatchesPlayed=21), Row(Team='Norway', TotalMatchesPlayed=21), Row(Team='Sweden', TotalMatchesPlayed=21), Row(Team='USA', TotalMatchesPlayed=21), Row(Team='Ecuador', TotalMatchesPlayed=21), Row(Team='Mexico', TotalMatchesPlayed=21), Row(Team='Nigeria', TotalMatchesPlayed=21), Row(Team='China', TotalMatchesPlayed=14), Row(Team='Canada', TotalMatchesPlayed=14)]
 ```
 
+```sql
+SELECT team AS Team, COUNT(*) AS TotalMatchesPlayed FROM (SELECT team1 AS team FROM default.matchesdb_one UNION ALL SELECT team2 AS team FROM default.matchesdb_one UNION ALL SELECT team1 AS team FROM default.wwc_matches_2_db UNION ALL SELECT team2 AS team FROM default.wwc_matches_2_db) AS AllTeams GROUP BY Team ORDER BY TotalMatchesPlayed DESC;
+```
+
+```response from databricks
+[Row(Team='South Korea', TotalMatchesPlayed=24), Row(Team='Switzerland', TotalMatchesPlayed=24), Row(Team='Ivory Coast', TotalMatchesPlayed=24), Row(Team='New Zealand', TotalMatchesPlayed=24), Row(Team='Germany', TotalMatchesPlayed=24), Row(Team='Brazil', TotalMatchesPlayed=24), Row(Team='Netherlands', TotalMatchesPlayed=24), Row(Team='Costa Rica', TotalMatchesPlayed=24), Row(Team='Australia', TotalMatchesPlayed=24), Row(Team='Japan', TotalMatchesPlayed=24), Row(Team='Spain', TotalMatchesPlayed=24), Row(Team='Cameroon', TotalMatchesPlayed=24), Row(Team='England', TotalMatchesPlayed=24), Row(Team='Thailand', TotalMatchesPlayed=24), Row(Team='France', TotalMatchesPlayed=24), Row(Team='Sweden', TotalMatchesPlayed=24), Row(Team='USA', TotalMatchesPlayed=24), Row(Team='Mexico', TotalMatchesPlayed=24), Row(Team='Ecuador', TotalMatchesPlayed=24), Row(Team='Norway', TotalMatchesPlayed=24), Row(Team='Nigeria', TotalMatchesPlayed=24), Row(Team='Colombia', TotalMatchesPlayed=24), Row(Team='Canada', TotalMatchesPlayed=16), Row(Team='China', TotalMatchesPlayed=16)]
+```
+
+```sql
+SELECT team AS Team, COUNT(*) AS TotalMatchesPlayed
+            FROM (SELECT team1 AS team FROM default.matchesdb_one
+                UNION ALL
+                SELECT team2 AS team FROM default.matchesdb_one
+                UNION ALL
+                SELECT team1 AS team FROM default.wwc_matches_2_db
+                UNION ALL
+                SELECT team2 AS team FROM default.wwc_matches_2_db
+                ) AS AllTeams
+            GROUP BY Team
+            ORDER BY TotalMatchesPlayed DESC;
+```
+
+```response from databricks
+[Row(Team='South Korea', TotalMatchesPlayed=27), Row(Team='Switzerland', TotalMatchesPlayed=27), Row(Team='Ivory Coast', TotalMatchesPlayed=27), Row(Team='Germany', TotalMatchesPlayed=27), Row(Team='Netherlands', TotalMatchesPlayed=27), Row(Team='Costa Rica', TotalMatchesPlayed=27), Row(Team='Japan', TotalMatchesPlayed=27), Row(Team='Australia', TotalMatchesPlayed=27), Row(Team='Cameroon', TotalMatchesPlayed=27), Row(Team='England', TotalMatchesPlayed=27), Row(Team='Thailand', TotalMatchesPlayed=27), Row(Team='Spain', TotalMatchesPlayed=27), Row(Team='Colombia', TotalMatchesPlayed=27), Row(Team='France', TotalMatchesPlayed=27), Row(Team='USA', TotalMatchesPlayed=27), Row(Team='Norway', TotalMatchesPlayed=27), Row(Team='Sweden', TotalMatchesPlayed=27), Row(Team='Ecuador', TotalMatchesPlayed=27), Row(Team='Mexico', TotalMatchesPlayed=27), Row(Team='Brazil', TotalMatchesPlayed=27), Row(Team='Nigeria', TotalMatchesPlayed=27), Row(Team='New Zealand', TotalMatchesPlayed=27), Row(Team='China', TotalMatchesPlayed=18), Row(Team='Canada', TotalMatchesPlayed=18)]
+```
+
+```sql
+SELECT team AS Team, COUNT(*) AS TotalMatchesPlayed
+            FROM (SELECT team1 AS team FROM default.matchesdb_one
+                UNION ALL
+                SELECT team2 AS team FROM default.matchesdb_one
+                UNION ALL
+                SELECT team1 AS team FROM default.wwc_matches_2_db
+                UNION ALL
+                SELECT team2 AS team FROM default.wwc_matches_2_db
+                ) AS AllTeams
+            GROUP BY Team
+            ORDER BY TotalMatchesPlayed DESC;
+```
+
+```response from databricks
+[Row(Team='South Korea', TotalMatchesPlayed=30), Row(Team='Switzerland', TotalMatchesPlayed=30), Row(Team='Ivory Coast', TotalMatchesPlayed=30), Row(Team='New Zealand', TotalMatchesPlayed=30), Row(Team='Brazil', TotalMatchesPlayed=30), Row(Team='Germany', TotalMatchesPlayed=30), Row(Team='Netherlands', TotalMatchesPlayed=30), Row(Team='Costa Rica', TotalMatchesPlayed=30), Row(Team='Australia', TotalMatchesPlayed=30), Row(Team='Japan', TotalMatchesPlayed=30), Row(Team='Thailand', TotalMatchesPlayed=30), Row(Team='Spain', TotalMatchesPlayed=30), Row(Team='Cameroon', TotalMatchesPlayed=30), Row(Team='England', TotalMatchesPlayed=30), Row(Team='France', TotalMatchesPlayed=30), Row(Team='Sweden', TotalMatchesPlayed=30), Row(Team='USA', TotalMatchesPlayed=30), Row(Team='Mexico', TotalMatchesPlayed=30), Row(Team='Ecuador', TotalMatchesPlayed=30), Row(Team='Norway', TotalMatchesPlayed=30), Row(Team='Nigeria', TotalMatchesPlayed=30), Row(Team='Colombia', TotalMatchesPlayed=30), Row(Team='Canada', TotalMatchesPlayed=20), Row(Team='China', TotalMatchesPlayed=20)]
+```
+
