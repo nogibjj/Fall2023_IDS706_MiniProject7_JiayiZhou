@@ -9,8 +9,8 @@ from mylib.query import (
 
 
 def handle_arguments(args):
-    """add action based on inital call"""
-    parser = argparse.ArgumentParser(description="Complex SQL query script")
+    """add action based on inital calls"""
+    parser = argparse.ArgumentParser(description="ETL-Query script")
     parser.add_argument(
         "action",
         choices=[
@@ -18,10 +18,10 @@ def handle_arguments(args):
             "transform_load",
             "general_query",
         ],
+        # shows how to run output
+        help="""Action to perform (extract, transform_load, general_query).""",
     )
     args = parser.parse_args(args[:1])
-    print(args.action)
-
     if args.action == "general_query":
         parser.add_argument("query")
 
@@ -41,7 +41,7 @@ def main():
         load()
     elif args.action == "general_query":
         general_query(args.query)
-
+        print("Query data...")
     else:
         print(f"Unknown action: {args.action}")
 

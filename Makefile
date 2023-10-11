@@ -23,7 +23,7 @@ all: install lint test format deploy
 
 generate_and_push:
 	# Create the markdown file 
-	python test_main.py  # Replace with the actual command to generate the markdown
+	python test_main.py 
 
 	# Add, commit, and push the generated files to GitHub
 	@if [ -n "$$(git status --porcelain)" ]; then \
@@ -37,11 +37,13 @@ generate_and_push:
 	fi
 
 extract:
-	python main.py extract
+	etl_query extract
 
 transform_load: 
-	python main.py transform_load
+	etl_query transform_load
 
 query:
-	python main.py general_query "SELECT team AS Team, COUNT(*) AS TotalMatchesPlayed FROM (SELECT team1 AS team FROM default.matchesdb_one UNION ALL SELECT team2 AS team FROM default.matchesdb_one UNION ALL SELECT team1 AS team FROM default.wwc_matches_2_db UNION ALL SELECT team2 AS team FROM default.wwc_matches_2_db) AS AllTeams GROUP BY Team ORDER BY TotalMatchesPlayed DESC;"
+	etl_query general_query "SELECT team AS Team, COUNT(*) AS TotalMatchesPlayed FROM (SELECT team1 AS team FROM default.matchesdb_one UNION ALL SELECT team2 AS team FROM default.matchesdb_one UNION ALL SELECT team1 AS team FROM default.wwc_matches_2_db UNION ALL SELECT team2 AS team FROM default.wwc_matches_2_db) AS AllTeams GROUP BY Team ORDER BY TotalMatchesPlayed DESC;"
 
+setup_package: 
+	python setup.py develop --user
