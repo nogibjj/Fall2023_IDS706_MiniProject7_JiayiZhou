@@ -2,7 +2,7 @@
 ### by Jiayi Zhou [![CI](https://github.com/nogibjj/Fall2023_IDS706_MiniProject7_JiayiZhou/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Fall2023_IDS706_MiniProject7_JiayiZhou/actions/workflows/cicd.yml)
 
 ### Purpose
-This is for class data engineering mini project 7. It packages a Python Script into a Command-Line Tool. The user guide is (https://github.com/nogibjj/Fall2023_IDS706_MiniProject7_JiayiZhou/blob/main/user_guide.md "here"). It uses Python Script interacting with SQL Database on Azure Databricks. It utilizes continuous integration using GitHub Actions to automatically set up environment, test, format and lint code.
+This is for class data engineering mini project 7. It packages a Python Script into a Command-Line Tool. The user guide is [here](https://github.com/nogibjj/Fall2023_IDS706_MiniProject7_JiayiZhou/blob/main/user_guide.md). It uses Python Script interacting with SQL Database on Azure Databricks. It utilizes continuous integration using GitHub Actions to automatically set up environment, test, format and lint code.
 
 ### Requirements
   * Package a Python script with setuptools or a similar tool
