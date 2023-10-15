@@ -2,7 +2,12 @@
 ### by Jiayi Zhou [![CI](https://github.com/nogibjj/Fall2023_IDS706_MiniProject7_JiayiZhou/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Fall2023_IDS706_MiniProject7_JiayiZhou/actions/workflows/cicd.yml)
 
 ### Purpose
-This is for class data engineering mini project 7. It packages a Python Script into a Command-Line Tool. It uses Python Script interacting with SQL Database on Azure Databricks. It utilizes continuous integration using GitHub Actions to automatically set up environment, test, format and lint code.
+This is for class data engineering mini project 7. It packages a Python Script into a Command-Line Tool. The user guide is in the repository. It uses Python Script interacting with SQL Database on Azure Databricks. It utilizes continuous integration using GitHub Actions to automatically set up environment, test, format and lint code.
+
+### Requirements
+  * Package a Python script with setuptools or a similar tool
+  * Include a user guide on how to install and use the tool
+  * Include communication with an external or internal database (NoSQL, SQL, etc)
 
 ### Functionality
 The project does: ETL-Query: [E] Extract a dataset from URL, [T] Transform, [L] Load into SQLite Database and [Q] Query For the ETL-Query lab:
@@ -28,7 +33,7 @@ Make test, make format, and make lint are run in actions. The commands run smoot
 
 
 ### Visualization of Process:
-![Miniproject6](https://github.com/nogibjj/Fall2023_IDS706_MiniProject6_JiayiZhou/assets/143651921/4e028eb0-692d-4399-b865-2be4df73e2f4)
+
 
 
 
