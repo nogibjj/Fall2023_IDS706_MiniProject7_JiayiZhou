@@ -18,6 +18,12 @@ The project does: ETL-Query: [E] Extract a dataset from URL, [T] Transform, [L] 
 
 ### Steps
 I created the template based on mini project 6 and modified the template. Based on the template, I made the following changes:
+1. Convert the `main.py` into a command-line tool that run each step independantly:
+- Extract
+- Transform and Load
+- General query execution
+2. modify the make file to match with etl command line tool
+3. add the user_guide.md
 
 ### Query
 This query accomplishes the following using a combination of subqueries, unions, aggregation, and sorting:
@@ -30,9 +36,12 @@ This query accomplishes the following using a combination of subqueries, unions,
 
 ### Check format and error:
 Make test, make format, and make lint are run in actions. The commands run smoothly.  
-
+<img width="1212" alt="Screenshot 2023-10-15 at 6 00 02 PM" src="https://github.com/nogibjj/Fall2023_IDS706_MiniProject7_JiayiZhou/assets/143651921/e4fdc5c5-a1c6-47b0-b2d7-3fa65223023a">
 
 ### Visualization of Process:
+![process (3)](https://github.com/nogibjj/Fall2023_IDS706_MiniProject7_JiayiZhou/assets/143651921/04bb86d0-c73f-452f-8f57-baf8288e3a6c)
+
+
 
 
 
